@@ -80,3 +80,18 @@ A = collect(reshape(1:9, 3, 3))
 #2.7モジュール
 @__MODULE__
 
+1:3 .|> (x -> x^2) |> sum |> sqrt
+
+1:3 .|> x -> x^2 |> sum 
+
+
+a = rand(2,1)
+A = rand(2,3)
+
+@time broadcast(+, a, A)
+@time a .+ A
+
+b = rand(1,2)
+
+@time broadcast(+, a, b)
+@time a .+ b
